@@ -3,7 +3,7 @@ import time
 
 QUEUE_DIR = "cola"
 
-print("[Consumer] Esperando archivos...")
+print("[Claudia] Esperando archivos...")
 
 while True:
     files = os.listdir(QUEUE_DIR)
