@@ -1,12 +1,22 @@
-#Crean archivos dentro de cola/
+import os
 import time
-import datetime
-from tools import write_cola
+
+
+QUEUE_DIR = "cola"
+
+print("[Carlos] Iniciando...")
+
+counter = 0
 
 while True:
+    filename = f"p2_{counter}.txt"
+    filepath = os.path.join(QUEUE_DIR, filename)
+
+    with open(filepath, "w") as f:
+        f.write(f"Generado por Producer 2\n")
+
+    print(f"[Carlos] Generó {filename}")
+    
+    counter += 1
+
     time.sleep(1)
-    #Crear archivo
-    print("Soy Carlos y creo un archivo del Atlético de Madrid")
-    linea="Carlos,9,Hola colchoneros"
-    file_name="Carlos_"+datetime.datetime.now().strftime()
-    write_cola(linea,file_name)
